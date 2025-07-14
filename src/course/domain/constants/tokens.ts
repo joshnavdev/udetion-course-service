@@ -1,0 +1,2 @@
+export const COURSE_SERVICE = Symbol('COURSE_SERVICE');
+export const COURSE_REPOSITORY = Symbol('COURSE_REPOSITORY');
