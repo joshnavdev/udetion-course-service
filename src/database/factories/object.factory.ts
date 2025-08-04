@@ -6,9 +6,6 @@ export class ObjectFactory {
   static createFromClass(model: SchemaClass) {
     const props = getPropsMetadata(model);
     const options = getOptionsMetadata(model);
-
-    console.log({ props, options });
-
     return new dynamoose.Schema(props, options);
   }
 }

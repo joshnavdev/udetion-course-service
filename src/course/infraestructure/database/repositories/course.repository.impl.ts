@@ -10,7 +10,6 @@ export class CourseRepositoryImpl implements CourseRepository {
 
   async findAllByUrl(url: string): Promise<CourseEntity[]> {
     const course = await this.courseModel.query('url').eq(url).using('url-index').exec();
-    console.log('findAllByUrl', JSON.stringify(course, null, 2));
     return course;
   }
 }

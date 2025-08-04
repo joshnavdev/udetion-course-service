@@ -7,7 +7,6 @@ export function Prop(options?: AttributeDefinition): PropertyDecorator {
 
     if (!options.type) {
       const type = Reflect.getMetadata(TYPE_METADATA_KEY, target, propertyKey);
-      // console.log(typeof target, type);
 
       if (type === Array) {
         options.type = [];
@@ -25,18 +24,3 @@ export function Prop(options?: AttributeDefinition): PropertyDecorator {
     Reflect.defineMetadata(PROPS_METADATA_KEY, props, target.constructor);
   };
 }
-
-/*
-
- @Prop()
-  id: number;
-
-  @Prop()
-  title: string;
-
-  @Prop({ type: String, index: { name: 'url-index', type: 'global' } })
-  url: string;
-
-  @Prop({ type: Set, schema: [ModuleOrmEntity] })
-  modules: ModuleOrmEntity[];
- */
