@@ -2,7 +2,7 @@ import { Body, Controller, Inject, Post } from '@nestjs/common';
 import { CourseService } from '../../domain/services/course.service';
 import { SearchCourseValidatorDto } from '../dtos/searchCourseValidator.dto';
 import { CourseEntity } from '../../domain/entities/course.entity';
-import { COURSE_SERVICE } from '../../domain/constants/tokens';
+import { COURSE_SERVICE } from '../../domain/constants';
 
 @Controller('courses')
 export class CourseController {

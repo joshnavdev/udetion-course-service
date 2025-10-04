@@ -7,4 +7,5 @@ export const configValidationSchema = joi.object({
   AWS_SECRET_ACCESS_KEY: joi.string().required(),
   AWS_SESSION_TOKEN: joi.string(),
   AWS_REGION: joi.string().default('us-east-1'),
+  KAFKA_BROKER_0: joi.string().required(),
 });

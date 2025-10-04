@@ -9,7 +9,10 @@ export class CourseRepositoryImpl implements CourseRepository {
   constructor(@InjectModel(CourseOrmEntity) private readonly courseModel: ModelType<CourseOrmEntity & Item>) {}
 
   async findAllByUrl(url: string): Promise<CourseEntity[]> {
-    const course = await this.courseModel.query('url').eq(url).using('url-index').exec();
-    return course;
+    return this.courseModel.query('url').eq(url).using('url-index').exec();
+  }
+
+  save(course: CourseEntity): Promise<CourseEntity> {
+    return this.courseModel.create(course);
   }
 }
